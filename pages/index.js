@@ -1,11 +1,19 @@
 import Image from 'next/image'
+import Head from 'next/head'
 import { Inter } from 'next/font/google'
-
+import { LayoutMain } from '../components/layouts';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main
+    <LayoutMain>
+       <Head>
+        <title>Example Nexjs</title>
+        <meta name="description" content="Example Nexjs" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+<main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -114,5 +122,7 @@ export default function Home() {
         </a>
       </div>
     </main>
+    </LayoutMain>
+    
   )
 }
