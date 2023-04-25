@@ -14,8 +14,11 @@ const HomeRadioWapper = props => {
                 <title>Example Nexjs</title>
                 <meta name="description" content="Example Nexjs" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/vohonline.svg" />
             </Head>
+            <div className='min-h-screen'>
+                <h1>Trang home radio</h1>
+            </div>
         </LayoutRadio>
     )
 }
