@@ -6,10 +6,12 @@ import { LayoutMain } from "@/components/layouts";
 import { getPageHomeRadio } from "@/services/radio/pageHome";
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import { getHomeData } from '@/services/main/home';
 const inter = Inter({ subsets: ['latin'] })
 const HomeWapper = props => {
-    const { navBarData } = props;
+    const { navBarData,data } = props;
     console.log(navBarData);
+    console.log(data);
     return (
         <LayoutMain
             navBarData={navBarData}>
@@ -66,8 +68,9 @@ HomeWapper.propTypes = {
 };
 
 HomeWapper.getInitialProps = async ({ req }) => {
-    const { data } = await getPageHomeRadio(req?.headers['user-agent']);
-    const navBarData = data.menu;
-    return { navBarData };
+    const { data:dataRadio } = await getPageHomeRadio(req?.headers['user-agent']);
+    const { menu:navBarData} = dataRadio;
+    const {tinNoiBat:data} = await getHomeData(req?.headers['user-agent']);
+    return { navBarData,data };
 };
 export default withRouter(HomeWapper);

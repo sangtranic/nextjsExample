@@ -6,7 +6,8 @@ const {
   DOMAIN,
   RADIO_DOMAIN,
   IMG_DOMAIN,
-  RADIO_API
+  RADIO_API,
+  VOH_API
 } = process.env;
 const isProd = NODE_ENV === 'production';
 
@@ -16,6 +17,7 @@ module.exports = withBundleAnalyzer({
     DOMAIN,
     RADIO_DOMAIN,
     IMG_DOMAIN,
-    RADIO_API
+    RADIO_API,
+    VOH_API
   }
 })
