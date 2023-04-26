@@ -3678,6 +3678,7 @@
     background-color: var(--white);
     border-bottom: 1px solid #e7e8ea
 }
+.TopNavigation_time-and-contact__225PE ul li,.TopNavigation_contact__2XxSL span {font-size: 12px;}
 
 .TopNavigation_wrapper-head-top__uESxa .TopNavigation_header__37vyw .TopNavigation_time-and-contact__225PE .TopNavigation_time__3Ckwt {
     font-size: 1.4rem
@@ -3744,7 +3745,7 @@
 }
 
 .TopNavigation_wrapper-head-top__uESxa .TopNavigation_header__37vyw .TopNavigation_time-and-contact__225PE .TopNavigation_contact__2XxSL span {
-    font-size: 1.4rem;
+    font-size: 12px;
     line-height: 2.15
 }
 
@@ -6644,7 +6645,6 @@
 
 html {
     background-color: #f7f7f7;
-    font-size: 10px;
     -webkit-tap-highlight-color: rgba(201,224,253,0)
 }
 
