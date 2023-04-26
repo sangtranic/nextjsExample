@@ -23,12 +23,13 @@ const HomeRadioWapper = props => {
     )
 }
 HomeRadioWapper.propTypes = {
-    navBarData: PropTypes.any,
+    navBarData: PropTypes.array,
 };
 
 HomeRadioWapper.getInitialProps = async ({ req }) => {
     const { data } = await getPageHomeRadio(req?.headers['user-agent']);
-    const navBarData = data.menu;
+    let { menu: navBarData } = data;
+    //const navBarData = data.menu || [];
     return { navBarData };
 };
 export default withRouter(HomeRadioWapper);
