@@ -75,9 +75,8 @@ const NavigationRadio = ({ menu, router }) => {
                             <div className="TopNavigation_tab-left__3-___">
                                 <div className="TopNavigation_logo-voh__2Xxi3">
                                     <h1 className="style_html-tag-h1__23liH">Đài tiếng nói nhân dân Thành phố Hồ Chí Minh - VOH</h1>
-                                    <a href="/">
-                                        <Image src="/images/Logo-VOH-08.svg" alt="logo-voh-radio-online" width={128} height={50} objectFit='contain' />
-                                    </a>
+                                    <RadioLink to="/"><Image src="/images/Logo-VOH-08.svg" alt="logo-voh-radio-online" width={128} height={50} objectFit='contain' /></RadioLink>
+                                    
                                 </div>
                             </div>
                             <div className="TopNavigation_tab-right__1rGDU">
@@ -127,7 +126,7 @@ const NavigationRadio = ({ menu, router }) => {
                                     <div>
                                         <div className="NavigationDrawer_menu-item__hUTrM">
                                             <h5 className="style_html-tag-h5__8ufRl">
-                                                <a href="https://voh.com.vn/radio.html" target="_blank">Radio</a>
+                                            <RadioLink to="/radio.html">Radio</RadioLink>
                                             </h5>
                                         </div>
                                         {
@@ -150,7 +149,7 @@ const NavigationRadio = ({ menu, router }) => {
                                 <i className="fas fa-home custom-home"></i>
                             </a>
                             <h5 className="style_html-tag-h5__8ufRl">
-                                <a href="https://voh.com.vn/radio.html" target="_blank">Radio</a>
+                                <RadioLink to="/radio.html">Radio</RadioLink>
                             </h5>
                             {
                                 menu.map((val, index) => (
@@ -175,7 +174,7 @@ const NavigationRadio = ({ menu, router }) => {
                                 <i className="fas fa-home custom-home"></i>
                             </a>
                             <h5 className="style_html-tag-h5__8ufRl">
-                                <a href="https://voh.com.vn/radio.html" target="_blank">Radio</a>
+                                <Link href="/radio.html">Radio</Link>
                             </h5>
                             {
                                 menu.map((val, index) => (
