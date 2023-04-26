@@ -53,9 +53,6 @@ const HomeWapper = props => {
                         <div className="NewsListItem_news-list-item-intro__3Ohhu">{val.intro}</div>
                       </div>
                     </div>
-                    // <h5 className="style_html-tag-h5__8ufRl">
-                    //     <RadioLink key={val?.uniqId} to={val?.slug && val?.uniqId && `/podcast/${val.slug}.${val.uniqId}.html`}>{val.name}</RadioLink>
-                    // </h5>
                   ))
                 }
               </div>

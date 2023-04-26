@@ -8,15 +8,9 @@ const { publicRuntimeConfig } = getConfig();
 const NavigationRadioFooter = () => {
 
     return (
-        <footer
-            className="md:h-[224px] sticky top-0 z-20 mx-4 mt-4 bg-podcast-white header text-podcast-body-2 md:text-podcast-caption-1"
-        >
-            <div
-                className="flex flex-col justify-between pt-6 border-t border-podcast-neutral-6/[0.38] md:flex-row"
-            >
-                <div
-                    className="flex flex-row flex-wrap w-full pb-4 md:flex-nowrap mb:pb-0 md:items-end"
-                >
+        <footer className="md sticky top-0 z-20 mx-4 mt-4 bg-podcast-white header text-podcast-body-2 md:text-podcast-caption-1">
+            <div className="flex flex-col justify-between pt-6 border-t border-podcast-neutral-6/[0.38] md:flex-row" >
+                <div className="container flex flex-row flex-wrap w-full pb-4 md:flex-nowrap mb:pb-0 md:items-end">
                     <div className="flex justify-center order-1 h-fit md:order-none">
                         <img
                             className="min-w-[110px] w-[110px]"

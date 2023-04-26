@@ -1941,7 +1941,8 @@
 }
 
 .NewsListItem_news-list-item-wrapper__15Cd1 .NewsListItem_news-list-item-ext__11cfJ .NewsListItem_cate-name__YkB_8 a {
-    color: var(--blue-300)!important
+    color: var(--blue-300)!important;
+    font-size: 18px;
 }
 
 .NewsListItem_news-list-item-wrapper__15Cd1 .NewsListItem_news-list-item-ext__11cfJ .NewsListItem_cate-name__YkB_8 a:hover {
@@ -1977,7 +1978,8 @@
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     display: -webkit-box;
-    -webkit-box-orient: vertical
+    -webkit-box-orient: vertical;
+    font-size: 16px;
 }
 
 @media only screen and (max-width: 768px) {
