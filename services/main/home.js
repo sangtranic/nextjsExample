@@ -24,3 +24,22 @@ export const getMenuMain = async userAgent => {
     );
     return response;
 };
+
+export const getCategory = async (id, page, userAgent, dow) => {
+    try {
+      const response = await API_VOH.get(
+        publicRuntimeConfig.VOH_API + `cate/${id}/${page}`,
+        {
+          headers: {
+            'User-Agent': userAgent || (process.browser && navigator?.userAgent),
+          },
+          params: {
+            dow,
+          },
+        },
+      );
+      return response;
+    } catch (err) {
+      console.log(err);
+    }
+  };

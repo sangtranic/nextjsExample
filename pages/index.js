@@ -13,6 +13,7 @@ const HomeWapper = props => {
   const { navBarData, data } = props;
   return (
     <LayoutMain navBarData={navBarData}>
+      <>
       <Head>
         <title>Example Nexjs</title>
         <meta name="description" content="Example Nexjs" />
@@ -55,7 +56,7 @@ const HomeWapper = props => {
             </div>
           </div>
         </div>
-      </div>
+      </div></>
     </LayoutMain>
   )
 }

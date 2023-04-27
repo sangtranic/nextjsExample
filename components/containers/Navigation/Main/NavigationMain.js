@@ -62,7 +62,7 @@ const NavigationRadio = ({ menu, router }) => {
                         </a>
                         <div className="TopNavigation_search-box__1eDDD">
                             <div className="TopNavigation_search-wp__2yZ9m">
-                                <label for="search_box">Search</label>
+                                <label htmlFor="search_box">Search</label>
                                 <input type="text" id="search_box" placeholder="Nhập nội dung tìm kiếm …" />
                                 <div className="TopNavigation_icon-wp__1T7zs">
                                     <i className="fas fa-search"></i>
@@ -131,9 +131,9 @@ const NavigationRadio = ({ menu, router }) => {
                                         </div>
                                         {
                                             menu.map((val, index) => (
-                                                <div className="NavigationDrawer_menu-item__hUTrM">
+                                                <div key={val?.cateID}  className="NavigationDrawer_menu-item__hUTrM">
                                                     <h5 className="style_html-tag-h5__8ufRl">
-                                                        <RadioLink key={val?.cateID} to={val.friendlyUrl}>{val.cateName}</RadioLink>
+                                                        <RadioLink to={val.friendlyUrl}>{val.cateName}</RadioLink>
                                                     </h5>
                                                 </div>
                                             ))
@@ -153,7 +153,7 @@ const NavigationRadio = ({ menu, router }) => {
                             </h5>
                             {
                                 menu.map((item, index) => (
-                                    <h5 className="style_html-tag-h5__8ufRl">
+                                    <h5 key={index} className="style_html-tag-h5__8ufRl">
                                         <RadioLink key={item?.cateID} to={item.friendlyUrl}>{item.cateName}</RadioLink>
                                     </h5>
                                 ))
@@ -178,7 +178,7 @@ const NavigationRadio = ({ menu, router }) => {
                             </h5>
                             {
                                 menu.map((val, index) => (
-                                    <h5 className="style_html-tag-h5__8ufRl">
+                                    <h5 key={index} className="style_html-tag-h5__8ufRl">
                                         <RadioLink key={val?.cateID} to={val.friendlyUrl}>{val.cateName}</RadioLink>
                                     </h5>
                                 ))
