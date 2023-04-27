@@ -6,14 +6,13 @@ import { LayoutMain } from "@/components/layouts";
 import { getPageHomeRadio } from "@/services/radio/pageHome";
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { getHomeData } from '@/services/main/home';
+import { getHomeData, getMenuMain } from '@/services/main/home';
 import { RadioLink } from '@/components/radioLink';
 const inter = Inter({ subsets: ['latin'] })
 const HomeWapper = props => {
   const { navBarData, data } = props;
   return (
-    <LayoutMain
-      navBarData={navBarData}>
+    <LayoutMain navBarData={navBarData}>
       <Head>
         <title>Example Nexjs</title>
         <meta name="description" content="Example Nexjs" />
@@ -21,7 +20,6 @@ const HomeWapper = props => {
         <link rel="icon" href="/vohonline.svg" />
       </Head>
       <div className="container">
-
         <div className="DefaultLayout_content-wrapper__5n_fy">
           <div className="Home_home-wrapper__19AOT" >
             <div className="Home_body-home-container__1VznX" >
@@ -67,8 +65,8 @@ HomeWapper.propTypes = {
 };
 
 HomeWapper.getInitialProps = async ({ req }) => {
-  const { data: dataRadio } = await getPageHomeRadio(req?.headers['user-agent']);
-  const { menu: navBarData } = dataRadio;
+  const { data: dataMenu } = await getMenuMain(req?.headers['user-agent']);
+  const { menu: navBarData } = dataMenu;
   const { data: dataHome } = await getHomeData(req?.headers['user-agent']);
   const { tinNoiBat: data } = dataHome;
   return { navBarData, data };

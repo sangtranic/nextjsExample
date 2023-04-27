@@ -133,7 +133,7 @@ const NavigationRadio = ({ menu, router }) => {
                                             menu.map((val, index) => (
                                                 <div className="NavigationDrawer_menu-item__hUTrM">
                                                     <h5 className="style_html-tag-h5__8ufRl">
-                                                        <RadioLink key={val?.uniqId} to={val?.slug && val?.uniqId && `/podcast/${val.slug}.${val.uniqId}.html`}>{val.name}</RadioLink>
+                                                        <RadioLink key={val?.cateID} to={val.friendlyUrl}>{val.cateName}</RadioLink>
                                                     </h5>
                                                 </div>
                                             ))
@@ -152,9 +152,9 @@ const NavigationRadio = ({ menu, router }) => {
                                 <RadioLink to="/radio.html">Radio</RadioLink>
                             </h5>
                             {
-                                menu.map((val, index) => (
+                                menu.map((item, index) => (
                                     <h5 className="style_html-tag-h5__8ufRl">
-                                        <RadioLink key={val?.uniqId} to={val?.slug && val?.uniqId && `/podcast/${val.slug}.${val.uniqId}.html`}>{val.name}</RadioLink>
+                                        <RadioLink key={item?.cateID} to={item.friendlyUrl}>{item.cateName}</RadioLink>
                                     </h5>
                                 ))
                             }
@@ -179,7 +179,7 @@ const NavigationRadio = ({ menu, router }) => {
                             {
                                 menu.map((val, index) => (
                                     <h5 className="style_html-tag-h5__8ufRl">
-                                        <RadioLink key={val?.uniqId} to={val?.slug && val?.uniqId && `/podcast/${val.slug}.${val.uniqId}.html`}>{val.name}</RadioLink>
+                                        <RadioLink key={val?.cateID} to={val.friendlyUrl}>{val.cateName}</RadioLink>
                                     </h5>
                                 ))
                             }
