@@ -5,14 +5,14 @@ import { getCategory, getMenuMain } from '@/services/main/home';
 import { RadioLink } from '@/components/radioLink';
 import Head from "next/head";
 const CategoryWapper = ({ router, navBarData, dataCategory }) => {
-
+    const { news: data } = dataCategory;
     const { slug, id } = router.query;
     // const { navBarData } = props;
     return (
         <LayoutMain navBarData={navBarData}>
             <>
                 <Head>
-                    <title>Category Page</title>
+                    <title>{dataCategory.cateName}</title>
                     <meta name="description" content="Example Nexjs" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <link rel="icon" href="/vohonline.svg" />
@@ -23,7 +23,7 @@ const CategoryWapper = ({ router, navBarData, dataCategory }) => {
                             <div className="Home_body-home-container__1VznX" >
                                 <div className="Home_body-home-left__37mb7">
                                     {
-                                        dataCategory.map((item, index) => (
+                                        data.map((item, index) => (
                                             <div key={index} className="NewsList_news-list-item__I2UeH">
                                                 <div className="NewsListItem_news-list-item-thumb__1gs8s">
                                                     <RadioLink to={item.friendlyUrl}>
@@ -61,13 +61,13 @@ const CategoryWapper = ({ router, navBarData, dataCategory }) => {
 CategoryWapper.getInitialProps = async ({ query, req }) => {
     const { data: dataMenu } = await getMenuMain(req?.headers['user-agent']);
     const { menu: navBarData } = dataMenu;
-    const { data: dataAllFromCategory } = await getCategory(
+    const { data: dataCategory } = await getCategory(
         query.id,
         query.page ? query.page - 1 : 0,
         req?.headers['user-agent'],
         query.dow,
     );
-    const { news: dataCategory } = dataAllFromCategory;
+    //const { news: dataCategory } = dataAllFromCategory;
     return { navBarData, dataCategory };
 };
 export default withRouter(CategoryWapper)
