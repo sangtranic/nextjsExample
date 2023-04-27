@@ -11,8 +11,6 @@ import { RadioLink } from '@/components/radioLink';
 const inter = Inter({ subsets: ['latin'] })
 const HomeWapper = props => {
   const { navBarData, data } = props;
-  console.log(navBarData);
-  console.log(data);
   return (
     <LayoutMain
       navBarData={navBarData}>
@@ -24,33 +22,33 @@ const HomeWapper = props => {
       </Head>
       <div className="container">
 
-        <div className="DefaultLayout_content-wrapper__5n_fy" >
+        <div className="DefaultLayout_content-wrapper__5n_fy">
           <div className="Home_home-wrapper__19AOT" >
             <div className="Home_body-home-container__1VznX" >
               <div className="Home_body-home-left__37mb7">
                 {
-                  data.map((val, index) => (
+                  data.map((item, index) => (
                     <div key={index} className="NewsList_news-list-item__I2UeH">
                       <div className="NewsListItem_news-list-item-thumb__1gs8s">
-                        <RadioLink to={val.friendlyUrl}>
-                          <img src={val.thumbnail} className="size-image_size-img__1V_wO " alt={val.title}/>
+                        <RadioLink to={item.friendlyUrl}>
+                          <img src={item.thumbnail} className="size-image_size-img__1V_wO " alt={item.title}/>
                         </RadioLink>
                       </div>
                       <div className="NewsListItem_news-list-item-wrapper__15Cd1">
                         <div className="NewsListItem_news-list-item-ext__11cfJ">
                           <div className="NewsListItem_time__Jp7h5">
-                            <span>{val.publictDay}</span>&nbsp;-&nbsp;
+                            <span>{item.publictDay}</span>&nbsp;-&nbsp;
                           </div>
                           <div className="NewsListItem_cate-name__YkB_8">
-                          <RadioLink to={val.frenlyCateUrl}>
-                          {val.cateName}
+                          <RadioLink to={item.frenlyCateUrl}>
+                          {item.cateName}
                         </RadioLink>
                           </div>
                         </div>
                         <div className="NewsListItem_news-list-item-title__2a-Yt">
-                          <RadioLink to={val.friendlyUrl}>{val.title}</RadioLink>
+                          <RadioLink to={item.friendlyUrl}>{item.title}</RadioLink>
                         </div>
-                        <div className="NewsListItem_news-list-item-intro__3Ohhu">{val.intro}</div>
+                        <div className="NewsListItem_news-list-item-intro__3Ohhu">{item.intro}</div>
                       </div>
                     </div>
                   ))
