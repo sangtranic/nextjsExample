@@ -43,3 +43,18 @@ export const getCategory = async (id, page, userAgent, dow) => {
       console.log(err);
     }
   };
+  export const getArticleDetail = async (id, userAgent) => {
+    try {
+      const response = await API_VOH.get(
+        publicRuntimeConfig.VOH_API + `news/${id}`,
+        {
+          headers: {
+            'User-Agent': userAgent || (process.browser && navigator?.userAgent),
+          },
+        },
+      );
+      return response;
+    } catch (err) {
+      console.log(err);
+    }
+  };

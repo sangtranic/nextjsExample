@@ -10,3 +10,4 @@ module.exports = routes() // ----   ----      -----
   .add('homeRadio', '/radio.html', 'homeRadio')
   .add('radio-category-detail', '/podcast/:slug.:id.html', 'radioCategoryDetail')
   .add('category', '/:slug-:id(\\d+).html', 'categories')
+  .add('articleDetail', '/:cate/:slug-:id(\\d+).html', 'articleDetail')
